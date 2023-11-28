@@ -1,6 +1,4 @@
 export function confirmar(nome: string, cursos: string[]): string {
-  console.log(cursos);
-
   return `
             <!DOCTYPE html>
             <html lang="pt">
