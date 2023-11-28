@@ -26,23 +26,30 @@ EMAIL_PASS="A senha da conta de email"
 $ yarn run start:dev
 ```
 
-## Rotas
+## API
 
-#### Rota base:
+Acesse a pasta insomnia-export(raiz do projeto) para importar as rotas e os payloads configurados
+
+#### Formato do Body de requisição(chave escola: "cel" ou "liceu"
+
+![Captura de tela 2023-11-28 161744](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/4304ef50-68e0-48ff-bb5c-2cfe43d45a5c)
+
+
+### Rota base:
 
 localhost:3000/notificacao
 
-#### Avanço na fila:
+### Avanço na fila:
 
-localhost:3000/notificacao/inscricao-liberada
+- localhost:3000/notificacao/inscricao-liberada
 
-#### Expiração do tempo para inscrição:
+### Expiração do tempo para inscrição:
 
-localhost:3000/notificacao/tempo-expirado
+- localhost:3000/notificacao/tempo-expirado
 
-#### Confirmação de inscrição(resumo dos cursos aos quais o usuário se inscreveu):
+### Confirmação de inscrição(resumo dos cursos aos quais o usuário se inscreveu):
 
-localhost:3000/notificacao/confirmacao-inscricao
+- localhost:3000/notificacao/confirmacao-inscricao
 
 
 ## Imagens de exemplo
