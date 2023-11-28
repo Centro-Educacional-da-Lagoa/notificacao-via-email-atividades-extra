@@ -1,20 +1,30 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Body } from '@nestjs/common';
 import { EmailService } from './email.service';
+
+interface IBody {
+  destinatarioEmail: string;
+  destinatarioNome: string;
+  cursosSelecionados: string[];
+  escola: string;
+}
+
 @Controller('notificacao')
 export class EmailController {
   constructor(private readonly emailService: EmailService) {}
 
   @Get('tempo-expirado')
-  async enviarEmailExpiracao() {
-    const destinatarioEmail = 'ojorgewilliamfurtado@gmail.com';
-    const destinatarioNome = 'Jorge';
-    const cursosSelecionados = ['Capoeira', 'Ballet', 'Natação'];
+  async enviarEmailExpiracao(@Body() body: IBody) {
+    const destinatarioEmail = body.destinatarioEmail;
+    const destinatarioNome = body.destinatarioNome;
+    const cursosSelecionados = body.cursosSelecionados;
+    const escola = body.escola;
 
     try {
       await this.emailService.enviarEmailExpiracao(
         destinatarioEmail,
         destinatarioNome,
         cursosSelecionados,
+        escola,
       );
 
       return 'email enviado com sucesso';
@@ -24,16 +34,18 @@ export class EmailController {
   }
 
   @Get('confirmacao-inscricao')
-  async enviarEmailConfirmacao() {
-    const destinatarioEmail = 'ojorgewilliamfurtado@gmail.com';
-    const destinatarioNome = 'Jorge';
-    const cursosSelecionados = ['Capoeira', 'Ballet', 'Natação'];
+  async enviarEmailConfirmacao(@Body() body: IBody) {
+    const destinatarioEmail = body.destinatarioEmail;
+    const destinatarioNome = body.destinatarioNome;
+    const cursosSelecionados = body.cursosSelecionados;
+    const escola = body.escola;
 
     try {
       await this.emailService.enviarEmailConfirmacao(
         destinatarioEmail,
         destinatarioNome,
         cursosSelecionados,
+        escola,
       );
 
       return 'email enviado com sucesso';
@@ -43,16 +55,17 @@ export class EmailController {
   }
 
   @Get('inscricao-liberada')
-  async enviarEmaiAvancoFila() {
-    const destinatarioEmail = 'ojorgewilliamfurtado@gmail.com';
-    const destinatarioNome = 'Jorge';
-    const cursosSelecionados = ['Capoeira', 'Natação', 'Volei'];
-
+  async enviarEmaiAvancoFila(@Body() body: IBody) {
+    const destinatarioEmail = body.destinatarioEmail;
+    const destinatarioNome = body.destinatarioNome;
+    const cursosSelecionados = body.cursosSelecionados;
+    const escola = body.escola;
     try {
       await this.emailService.enviarEmailAvancoFila(
         destinatarioEmail,
         destinatarioNome,
         cursosSelecionados,
+        escola,
       );
 
       return 'email enviado com sucesso';

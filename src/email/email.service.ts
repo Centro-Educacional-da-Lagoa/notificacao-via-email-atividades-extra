@@ -3,12 +3,14 @@
 import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 import * as dotenv from 'dotenv';
-import { expirar } from './helpers/cel/expiracao';
-import { confirmar } from './helpers/cel/confirmar';
-import { avancar } from './helpers/cel/avancar';
+import { expirarCel } from './helpers/cel/expiracaoCel';
+import { confirmarCel } from './helpers/cel/confirmarCel';
+import { avancarCel } from './helpers/cel/avancarCel';
+import { expirarLiceu } from './helpers/liceu/expiracaoLiceu';
+// import { confirmarLiceu } from './helpers/liceu/confirmarLiceu';
+import { avancarLiceu } from './helpers/liceu/avancarLiceu';
 
 dotenv.config(); // Carrega variáveis de ambiente do arquivo .env
-console.log(process.env.EMAIL_USER);
 
 @Injectable()
 export class EmailService {
@@ -29,44 +31,82 @@ export class EmailService {
     destinatarioEmail: string,
     destinatarioNome: string,
     cursosSelecionados: string[],
+    escola: string,
   ) {
-    const mailOptions = {
+    const mailOptionsCel = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
-      subject: 'Confirmação de Inscrição',
-      html: confirmar(destinatarioNome, cursosSelecionados).toString(),
+      subject: 'Confirmação de Inscrição - Centro Educacional da Lagoa',
+
+      html: confirmarCel(destinatarioNome, cursosSelecionados).toString(),
     };
 
-    return this.transporter.sendMail(mailOptions);
+    const mailOptionsLiceu = {
+      from: process.env.EMAIL_USER,
+      to: destinatarioEmail,
+      subject: 'Confirmação de Inscrição - Liceu',
+      html: confirmarCel(destinatarioNome, cursosSelecionados).toString(),
+    };
+
+    if (escola == 'cel') {
+      return this.transporter.sendMail(mailOptionsCel);
+    } else if (escola == 'liceu') {
+      return this.transporter.sendMail(mailOptionsLiceu);
+    }
   }
 
   async enviarEmailExpiracao(
     destinatarioEmail: string,
     destinatarioNome: string,
     cursosSelecionados: string[],
+    escola: string,
   ) {
-    const mailOptions = {
+    const mailOptionsCel = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
-      subject: 'Aviso de Expiração',
-      html: expirar(destinatarioNome, cursosSelecionados).toString(),
+      subject: 'Expiração do tempo de inscrição - Centro Educacional da Lagoa',
+
+      html: expirarCel(destinatarioNome, cursosSelecionados).toString(),
     };
 
-    return this.transporter.sendMail(mailOptions);
+    const mailOptionsLiceu = {
+      from: process.env.EMAIL_USER,
+      to: destinatarioEmail,
+      subject: 'Expiração do tempo de inscrição  - Liceu Franco Brasileiro',
+      html: expirarLiceu(destinatarioNome, cursosSelecionados).toString(),
+    };
+
+    if (escola == 'cel') {
+      return this.transporter.sendMail(mailOptionsCel);
+    } else if (escola == 'liceu') {
+      return this.transporter.sendMail(mailOptionsLiceu);
+    }
   }
 
   async enviarEmailAvancoFila(
     destinatarioEmail: string,
     destinatarioNome: string,
     cursosSelecionados: string[],
+    escola: string,
   ) {
-    const mailOptions = {
+    const mailOptionsCel = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
-      subject: 'Avanço na fila de espera',
-      html: avancar(destinatarioNome, cursosSelecionados).toString(),
+      subject: 'Avanço na fila de espera - Centro Educacional da Lagoa',
+      html: avancarCel(destinatarioNome, cursosSelecionados).toString(),
     };
 
-    return this.transporter.sendMail(mailOptions);
+    const mailOptionsLiceu = {
+      from: process.env.EMAIL_USER,
+      to: destinatarioEmail,
+      subject: 'Avanço na fila de espera - Liceu Franco Brasileiro',
+      html: avancarLiceu(destinatarioNome, cursosSelecionados).toString(),
+    };
+
+    if (escola == 'cel') {
+      return this.transporter.sendMail(mailOptionsCel);
+    } else if (escola == 'liceu') {
+      return this.transporter.sendMail(mailOptionsLiceu);
+    }
   }
 }
