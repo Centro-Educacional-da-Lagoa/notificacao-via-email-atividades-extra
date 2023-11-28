@@ -1,6 +1,4 @@
-export function confirmar(nome: string, cursos: string[]): string {
-  console.log(cursos);
-
+export function confirmarCel(nome: string, cursos: string[]): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
@@ -52,16 +50,12 @@ export function confirmar(nome: string, cursos: string[]): string {
                         <img
                           src="https://sjc1.vultrobjects.com/sinergia-cdn/cel%20logo/Logo%20CEL%20Intercultural%20School_Colorido.png"
                           height="100px"
-                          style="margin-top: 50px;"
+                          style="margin-top: 50px; margin-bottom: 50px"
                         />
                       </a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <hr class="barra-divisoria" />
-                    </td>
-                  </tr>
+                  
                   <tr>
                     <td>
                       <h1
@@ -124,11 +118,7 @@ export function confirmar(nome: string, cursos: string[]): string {
                       </a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <hr class="barra-divisoria" />
-                    </td>
-                  </tr>
+                  
                   <tr>
                     <td align="center">
                       <p
@@ -137,6 +127,7 @@ export function confirmar(nome: string, cursos: string[]): string {
                           color: #565656;
                           max-width: 422px;
                           padding: 0px 32px;
+                          margin-bottom: 60px;
                         "
                       >
                         Por favor, pedimos que você não responda esse e-mail, pois se trata

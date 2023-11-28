@@ -1,6 +1,4 @@
-export function avancar(nome: string, cursos: string[]): string {
-  console.log(cursos);
-
+export function avancarLiceu(nome: string, cursos: string[]): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
@@ -36,12 +34,6 @@ export function avancar(nome: string, cursos: string[]): string {
                     /* display: flex; */
                     /* flex-direction: column; */
                   }
-            
-                  .barra-divisoria {
-                    border: rgb(233, 233, 233) 1px solid;
-                    margin-top: 35px;
-                    max-width: 550px;
-                  }
                 </style>
               </head>
               <body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
@@ -52,7 +44,7 @@ export function avancar(nome: string, cursos: string[]): string {
                         <img
                           src="https://sjc1.vultrobjects.com/sinergia-cdn/franco%20logo/logo%20franco%20Colorida%20Horizontal.png"
                           height="200px"
-                          style="margin-top: 50px;"
+                          style="margin-top: 50px; marigin-bottom: 50px;
                         />
                       </a>
                     </td>
@@ -124,11 +116,6 @@ export function avancar(nome: string, cursos: string[]): string {
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <hr class="barra-divisoria" />
-                    </td>
-                  </tr>
-                  <tr>
                     <td align="center">
                       <p
                         style="
@@ -136,6 +123,7 @@ export function avancar(nome: string, cursos: string[]): string {
                           color: #565656;
                           max-width: 422px;
                           padding: 0px 32px;
+                          margin-top: 60px;
                         "
                       >
                         Por favor, pedimos que você não responda esse e-mail, pois se trata
@@ -144,73 +132,8 @@ export function avancar(nome: string, cursos: string[]): string {
                     </td>
                   </tr>
                 </table>
-                <tr>
-                  <td>
-                    <footer>
-                      <table align="center" style="padding: 30px;">
-                        <table align="center" style="margin-bottom: 3px;">
-                          <tr>
-                            <td>
-                              <a href="https://www.cel.com.br/" target="_blank">
-                                <img
-                                  src="./logo/logo franco Colorida Vertical Branca.png"
-                                  alt=""
-                                  height="150px"
-                                />
-                              </a>
-                            </td>
-                          </tr>
-                        </table>
-                        <table align="center" style="margin-bottom: 33px;">
-                          <tr>
-                            <td class="espacamento-icones">
-                              <a
-                                href="https://www.instagram.com/colegiofrancobrasileiro/"
-                                target="_blank"
-                                ><img src="./social/InstagramLogo.png" alt="" height="22px"
-                              /></a>
-                            </td>
-                            <td class="espacamento-icones">
-                              <a href="https://twitter.com/liceufranco" target="_blank"
-                                ><img src="./social/TwitterLogo.png" alt="" height="22px"
-                              /></a>
-                            </td>
-                            <td class="espacamento-icones">
-                              <a
-                                href="https://www.facebook.com/colegiofrancobrasileiro"
-                                target="_blank"
-                                ><img
-                                  src="./social/FacebookLogo.png"
-                                  alt=""
-                                  height="22px"
-                                />
-                              </a>
-                            </td>
-                            <td class="espacamento-icones">
-                              <a
-                                href="https://pt.linkedin.com/company/col%C3%A9gio-liceu-franco-brasileiro"
-                                target="_blank"
-                                ><img
-                                  src="./social/LinkedinLogo.png"
-                                  alt=""
-                                  height="22px"
-                                />
-                              </a>
-                            </td>
-                            <td class="espacamento-icones">
-                              <a
-                                href="https://www.youtube.com/channel/UCquX2i8JG0dK3pFgSz5pF1w"
-                                target="_blank"
-                                ><img src="./social/YoutubeLogo.png" alt="" height="22px" />
-                              </a>
-                            </td>
-                          </tr>
-                        </table>
-                        <div class="barra-footer"></div>
-                      </table>
-                    </footer>
-                  </td>
-                </tr>
+                
+                 
               </body>
             </html>
             

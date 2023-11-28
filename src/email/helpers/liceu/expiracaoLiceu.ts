@@ -1,6 +1,4 @@
-export function confirmar(nome: string, cursos: string[]): string {
-  console.log(cursos);
-
+export function expirarLiceu(nome: string, cursos: string[]): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
@@ -52,7 +50,7 @@ export function confirmar(nome: string, cursos: string[]): string {
                         <img
                           src="https://sjc1.vultrobjects.com/sinergia-cdn/franco%20logo/logo%20franco%20Colorida%20Horizontal.png"
                           height="200px"
-                          style="margin-top: 50px;"
+                          style="margin-top: 50px; marigin-bottom: 50px;
                         />
                       </a>
                     </td>
@@ -123,11 +121,7 @@ export function confirmar(nome: string, cursos: string[]): string {
                       </a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <hr class="barra-divisoria" />
-                    </td>
-                  </tr>
+                  
                   <tr>
                     <td align="center">
                       <p
@@ -136,6 +130,7 @@ export function confirmar(nome: string, cursos: string[]): string {
                           color: #565656;
                           max-width: 422px;
                           padding: 0px 32px;
+                          margin-top: 60px;
                         "
                       >
                         Por favor, pedimos que você não responda esse e-mail, pois se trata
