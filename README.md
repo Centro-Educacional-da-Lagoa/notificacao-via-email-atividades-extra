@@ -34,6 +34,11 @@ Acesse a pasta insomnia-export(raiz do projeto) para importar as rotas e os payl
 
 ![Captura de tela 2023-11-28 161744](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/4304ef50-68e0-48ff-bb5c-2cfe43d45a5c)
 
+#### Formato de retorno do JSON
+
+![Captura de tela 2023-11-28 163341](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/2e4db93d-34e6-42f2-834b-b7eb063b703a)
+
+
 
 ### Rota base:
 
