@@ -1,4 +1,4 @@
-export function expirar(nome: string, cursos: string[]): string {
+export function confirmarLiceu(nome: string, cursos: string[]): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">

@@ -1,4 +1,4 @@
-export function avancar(nome: string, cursos: string[]): string {
+export function expirarLiceu(nome: string, cursos: string[]): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
