@@ -7,7 +7,7 @@ import { expirarCel } from './helpers/cel/expiracaoCel';
 import { confirmarCel } from './helpers/cel/confirmarCel';
 import { avancarCel } from './helpers/cel/avancarCel';
 import { expirarLiceu } from './helpers/liceu/expiracaoLiceu';
-// import { confirmarLiceu } from './helpers/liceu/confirmarLiceu';
+import { confirmarLiceu } from './helpers/liceu/confirmarLiceu';
 import { avancarLiceu } from './helpers/liceu/avancarLiceu';
 
 dotenv.config(); // Carrega variáveis de ambiente do arquivo .env
@@ -45,7 +45,7 @@ export class EmailService {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
       subject: 'Confirmação de Inscrição - Liceu',
-      html: confirmarCel(destinatarioNome, cursosSelecionados).toString(),
+      html: confirmarLiceu(destinatarioNome, cursosSelecionados).toString(),
     };
 
     if (escola == 'cel') {

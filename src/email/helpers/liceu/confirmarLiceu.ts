@@ -72,15 +72,15 @@ export function confirmarLiceu(nome: string, cursos: string[]): string {
                     </td>
                   </tr>
                   <tr>
-                    <td>
-                      <p style="color: #565656; padding: 0px 32px;">
-                        Infelizmente o tempo limite para a realização da matricula do(s) curso(s)
-                        <span style="font-weight: 700;"> ${cursos.join(
-                          ', ',
-                        )} </span> expirou.
-                        Retorne ao portal e efetue uma nova inscrição.
-                      </p>
-                    </td>
+                  <td>
+                  <p style="color: #565656; padding: 0px 32px;">
+                  Informamos que sua inscrição no(s) curso(s)
+                  <span style="font-weight: 700;">${cursos.join(
+                    ', ',
+                  )}</span> foi efetuada
+                  com sucesso!
+                </p>
+                  </td>
                   </tr>
                   <tr>
                     <td>
