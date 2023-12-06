@@ -142,10 +142,10 @@ export function confirmarLiceu(nome: string, cursos: string[]): string {
                         <table align="center" style="margin-bottom: 3px;">
                           <tr>
                             <td>
-                              <a href="https://www.cel.com.br/" target="_blank">
+                              <a href="https://centrocultural.liceufranco.com.br/" target="_blank">
                                 <img
-                                  src="./logo/logo franco Colorida Vertical Branca.png"
-                                  alt=""
+                                  src="https://sjc1.vultrobjects.com/sinergia-cdn/franco%20logo/logo%20franco%20Colorida%20Vertical%20Branca.png"
+                                  alt="Logo do liceu Franco"
                                   height="150px"
                                 />
                               </a>
@@ -158,12 +158,12 @@ export function confirmarLiceu(nome: string, cursos: string[]): string {
                               <a
                                 href="https://www.instagram.com/colegiofrancobrasileiro/"
                                 target="_blank"
-                                ><img src="./social/InstagramLogo.png" alt="" height="22px"
+                                ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/InstagramLogo.png" alt="Logo do instagram" height="22px"
                               /></a>
                             </td>
                             <td class="espacamento-icones">
                               <a href="https://twitter.com/liceufranco" target="_blank"
-                                ><img src="./social/TwitterLogo.png" alt="" height="22px"
+                                ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/TwitterLogo.png" alt="Logo do Twitter" height="22px"
                               /></a>
                             </td>
                             <td class="espacamento-icones">
@@ -171,8 +171,8 @@ export function confirmarLiceu(nome: string, cursos: string[]): string {
                                 href="https://www.facebook.com/colegiofrancobrasileiro"
                                 target="_blank"
                                 ><img
-                                  src="./social/FacebookLogo.png"
-                                  alt=""
+                                  src="https://sjc1.vultrobjects.com/sinergia-cdn/social/FacebookLogo.png"
+                                  alt="Logo do Facebook"
                                   height="22px"
                                 />
                               </a>
@@ -182,8 +182,8 @@ export function confirmarLiceu(nome: string, cursos: string[]): string {
                                 href="https://pt.linkedin.com/company/col%C3%A9gio-liceu-franco-brasileiro"
                                 target="_blank"
                                 ><img
-                                  src="./social/LinkedinLogo.png"
-                                  alt=""
+                                  src="https://sjc1.vultrobjects.com/sinergia-cdn/social/LinkedinLogo.png"
+                                  alt="Logo do Linkedin"
                                   height="22px"
                                 />
                               </a>
