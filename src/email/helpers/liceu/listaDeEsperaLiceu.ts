@@ -1,4 +1,4 @@
-export function confirmarLiceu(
+export function listaDeEsperaLiceu(
   nomeResponsavel: string,
   nomeAluno: string,
   cursos: string[],
@@ -38,12 +38,6 @@ export function confirmarLiceu(
                     /* display: flex; */
                     /* flex-direction: column; */
                   }
-            
-                  .barra-divisoria {
-                    border: rgb(233, 233, 233) 1px solid;
-                    margin-top: 35px;
-                    max-width: 550px;
-                  }
                 </style>
               </head>
               <body style="margin: 0px; font-family: Arial, Helvetica, sans-serif;">
@@ -54,12 +48,16 @@ export function confirmarLiceu(
                         <img
                           src="https://sjc1.vultrobjects.com/sinergia-cdn/franco%20logo/logo%20franco%20Colorida%20Horizontal.png"
                           height="200px"
-                          style="margin-top: 50px; marigin-bottom: 50px;"
+                          style="margin-top: 50px; marigin-bottom: 50px;
                         />
                       </a>
                     </td>
                   </tr>
-                  
+                  <tr>
+                    <td>
+                      <hr class="barra-divisoria" />
+                    </td>
+                  </tr>
                   <tr>
                     <td>
                       <h1
@@ -78,17 +76,17 @@ export function confirmarLiceu(
                   <tr>
                   <td>
                   <p style="color: #565656; padding: 0px 32px;">
-                  Informamos que a inscrição do aluno <span style="font-weight: 800;">${nomeAluno}</span> no(s) curso(s):
-                  <span style="font-weight: 700;">${
-                    cursos.length > 1
-                      ? cursos.slice(0, -1).join(', ') +
-                        ' e ' +
-                        cursos.slice(-1)
-                      : cursos[0]
-                  }</span>, foi efetuada
-                  com sucesso!
-                </p>
-                  </td>
+                          Passando para lhe informar, que o(a) aluno(a) <span style="font-weight: 800;"> ${nomeAluno}</span>, acaba de entrar na fila de espera para o(s) curso(s)
+                          <span style="font-weight: 700;"> ${
+                            cursos.length > 1
+                              ? cursos.slice(0, -1).join(', ') +
+                                ' e ' +
+                                cursos.slice(-1)
+                              : cursos[0]
+                          } </span>.
+                          Assim que houver alguma mudança no status, você receberá uma notificação.
+                        </p>
+                </td>
                   </tr>
                   <tr>
                     <td>
@@ -125,7 +123,6 @@ export function confirmarLiceu(
                       </a>
                     </td>
                   </tr>
-                  
                   <tr>
                     <td align="center">
                       <p
@@ -143,6 +140,7 @@ export function confirmarLiceu(
                     </td>
                   </tr>
                 </table>
+                
                 <tr>
                   <td>
                     <footer>
@@ -153,7 +151,7 @@ export function confirmarLiceu(
                               <a href="https://centrocultural.liceufranco.com.br/" target="_blank">
                                 <img
                                   src="https://sjc1.vultrobjects.com/sinergia-cdn/franco%20logo/logo%20franco%20Colorida%20Vertical%20Branca.png"
-                                  alt="Logo do liceu Franco"
+                                  alt=""
                                   height="150px"
                                 />
                               </a>
@@ -197,11 +195,11 @@ export function confirmarLiceu(
                               </a>
                             </td>
                             <td class="espacamento-icones">
-                            <a
-                            href="https://www.youtube.com/channel/UCquX2i8JG0dK3pFgSz5pF1w"
-                            target="_blank"
-                            ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/YoutubeLogo.png" alt="Logo do Youtube" height="22px" />
-                          </a>
+                              <a
+                                href="https://www.youtube.com/channel/UCquX2i8JG0dK3pFgSz5pF1w"
+                                target="_blank"
+                                ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/YoutubeLogo.png" alt="Logo do Youtube" height="22px" />
+                              </a>
                             </td>
                           </tr>
                         </table>

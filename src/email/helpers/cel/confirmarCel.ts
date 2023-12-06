@@ -1,4 +1,8 @@
-export function confirmarCel(nome: string, cursos: string[]): string {
+export function confirmarCel(
+  nomeResponsavel: string,
+  nomeAluno: string,
+  cursos: string[],
+): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
@@ -11,7 +15,7 @@ export function confirmarCel(nome: string, cursos: string[]): string {
                     min-height: 200px;
                     /* max-width: 600px; */
                     /* margin: auto; */
-                    background: #a71c20;
+                    background: #D6141A;
                     margin-top: 23px;
                     display: flex;
                     flex-direction: column;
@@ -67,17 +71,21 @@ export function confirmarCel(nome: string, cursos: string[]): string {
                           padding: 0px 32px;
                         "
                       >
-                        Olá, ${nome}
+                        Olá, ${nomeResponsavel}
                       </h1>
                     </td>
                   </tr>
                   <tr>
                     <td>
                     <p style="color: #565656; padding: 0px 32px;">
-                    Informamos que sua inscrição no(s) curso(s)
-                    <span style="font-weight: 700;">${cursos.join(
-                      ', ',
-                    )}</span> foi efetuada
+                    Informamos que a inscrição do aluno <span style="font-weight: 800;">${nomeAluno}</span> no(s) curso(s)
+                    <span style="font-weight: 700;">${
+                      cursos.length > 1
+                        ? cursos.slice(0, -1).join(', ') +
+                          ' e ' +
+                          cursos.slice(-1)
+                        : cursos[0]
+                    }</span>, foi efetuada
                     com sucesso!
                   </p>
                     </td>
@@ -136,7 +144,68 @@ export function confirmarCel(nome: string, cursos: string[]): string {
                     </td>
                   </tr>
                 </table>
-                
+                <tr>
+                  <td>
+                    <footer>
+                      <table align="center" style="padding: 30px;">
+                        <table align="center" style="margin-bottom: 3px;">
+                          <tr>
+                            <td>
+                              <a href="https://www.cel.com.br/" target="_blank">
+                                <img
+                                  src="https://sjc1.vultrobjects.com/sinergia-cdn/cel%20logo/Logo%20CEL%20Intercultural%20School_BRANCA.png"
+                                  alt="Logo do Cel"
+                                  height="80px"
+                                />
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                        <table align="center" style="margin-bottom: 33px;">
+                        <tr>
+                        <td class="espacamento-icones">
+                          <a
+                            href="https://www.instagram.com/cel.rj/"
+                            target="_blank"
+                            ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/InstagramLogo.png" alt="Logo do instagram" height="22px"
+                          /></a>
+                        </td>
+                        <td class="espacamento-icones">
+                          <a
+                            href="https://www.facebook.com/cel.rj/"
+                            target="_blank"
+                            ><img
+                              src="https://sjc1.vultrobjects.com/sinergia-cdn/social/FacebookLogo.png"
+                              alt="Logo do Facebook"
+                              height="22px"
+                            />
+                          </a>
+                        </td>
+                        <td class="espacamento-icones">
+                          <a
+                            href="https://www.linkedin.com/company/celrj/"
+                            target="_blank"
+                            ><img
+                              src="https://sjc1.vultrobjects.com/sinergia-cdn/social/LinkedinLogo.png"
+                              alt="Logo do Linkedin"
+                              height="22px"
+                            />
+                          </a>
+                        </td>
+                        <td class="espacamento-icones">
+                          <a
+                            href="https://www.youtube.com/channel/UCfV-Uwf2Hai7UcM2tDWZI2A"
+                            target="_blank"
+                            ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/YoutubeLogo.png" alt="Logo Youtube" height="22px" />
+                          </a>
+                        </td>
+                      </tr>
+                        </table>
+                        <div class="barra-footer"></div>
+                      </table>
+                    </footer>
+                  </td>
+                </tr>
               </body>
             </html>
             

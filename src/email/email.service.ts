@@ -9,6 +9,8 @@ import { avancarCel } from './helpers/cel/avancarCel';
 import { expirarLiceu } from './helpers/liceu/expiracaoLiceu';
 import { confirmarLiceu } from './helpers/liceu/confirmarLiceu';
 import { avancarLiceu } from './helpers/liceu/avancarLiceu';
+import { listaDeEsperaCel } from './helpers/cel/listaDeEsperaCel';
+import { listaDeEsperaLiceu } from './helpers/liceu/listaDeEsperaLiceu';
 
 dotenv.config(); // Carrega variáveis de ambiente do arquivo .env
 
@@ -30,6 +32,7 @@ export class EmailService {
   async enviarEmailConfirmacao(
     destinatarioEmail: string,
     destinatarioNome: string,
+    nomeAluno: string,
     cursosSelecionados: string[],
     escola: string,
   ) {
@@ -38,14 +41,22 @@ export class EmailService {
       to: destinatarioEmail,
       subject: 'Confirmação de Inscrição - Centro Educacional da Lagoa',
 
-      html: confirmarCel(destinatarioNome, cursosSelecionados).toString(),
+      html: confirmarCel(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
     };
 
     const mailOptionsLiceu = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
       subject: 'Confirmação de Inscrição - Liceu',
-      html: confirmarLiceu(destinatarioNome, cursosSelecionados).toString(),
+      html: confirmarLiceu(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
     };
 
     if (escola == 'cel') {
@@ -58,6 +69,7 @@ export class EmailService {
   async enviarEmailExpiracao(
     destinatarioEmail: string,
     destinatarioNome: string,
+    nomeAluno: string,
     cursosSelecionados: string[],
     escola: string,
   ) {
@@ -66,14 +78,22 @@ export class EmailService {
       to: destinatarioEmail,
       subject: 'Expiração do tempo de inscrição - Centro Educacional da Lagoa',
 
-      html: expirarCel(destinatarioNome, cursosSelecionados).toString(),
+      html: expirarCel(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
     };
 
     const mailOptionsLiceu = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
       subject: 'Expiração do tempo de inscrição  - Liceu Franco Brasileiro',
-      html: expirarLiceu(destinatarioNome, cursosSelecionados).toString(),
+      html: expirarLiceu(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
     };
 
     if (escola == 'cel') {
@@ -86,6 +106,7 @@ export class EmailService {
   async enviarEmailAvancoFila(
     destinatarioEmail: string,
     destinatarioNome: string,
+    nomeAluno: string,
     cursosSelecionados: string[],
     escola: string,
   ) {
@@ -93,14 +114,58 @@ export class EmailService {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
       subject: 'Avanço na fila de espera - Centro Educacional da Lagoa',
-      html: avancarCel(destinatarioNome, cursosSelecionados).toString(),
+      html: avancarCel(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
     };
 
     const mailOptionsLiceu = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
       subject: 'Avanço na fila de espera - Liceu Franco Brasileiro',
-      html: avancarLiceu(destinatarioNome, cursosSelecionados).toString(),
+      html: avancarLiceu(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
+    };
+
+    if (escola == 'cel') {
+      return this.transporter.sendMail(mailOptionsCel);
+    } else if (escola == 'liceu') {
+      return this.transporter.sendMail(mailOptionsLiceu);
+    }
+  }
+
+  async enviarEmailListaDeEspera(
+    destinatarioEmail: string,
+    destinatarioNome: string,
+    nomeAluno: string,
+    cursosSelecionados: string[],
+    escola: string,
+  ) {
+    const mailOptionsCel = {
+      from: process.env.EMAIL_USER,
+      to: destinatarioEmail,
+      subject: 'Entrada na lista de espera - Centro Educacional da Lagoa',
+      html: listaDeEsperaCel(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
+    };
+
+    const mailOptionsLiceu = {
+      from: process.env.EMAIL_USER,
+      to: destinatarioEmail,
+      subject: 'Entrada na fila de espera - Liceu Franco Brasileiro',
+      html: listaDeEsperaLiceu(
+        destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+      ).toString(),
     };
 
     if (escola == 'cel') {
