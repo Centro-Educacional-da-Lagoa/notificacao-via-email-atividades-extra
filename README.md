@@ -64,7 +64,11 @@ localhost:3000/notificacao
 
 ## Imagens de exemplo
 
-![cel](https://github.com/Jorge-William/notificacao-via-email/assets/19416864/c336e3bc-d3b2-486e-963a-847e96131919)
+![image](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/59f82e5a-41f7-4a44-a1b2-83b751e30d57)
 
-![franco](https://github.com/Jorge-William/notificacao-via-email/assets/19416864/d56173f7-b730-4b97-9111-8cbd1308a6da)
+
+![image](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/e1374fe5-ea18-42bd-bd92-64ee4c765d75)
+
+
+![image](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/0ab92a03-9c36-4dda-975b-de793b04e885)
 
