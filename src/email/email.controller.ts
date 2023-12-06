@@ -4,6 +4,7 @@ import { EmailService } from './email.service';
 interface IBody {
   destinatarioEmail: string;
   destinatarioNome: string;
+  nomeAluno: string;
   cursosSelecionados: string[];
   escola: string;
 }
@@ -16,6 +17,7 @@ export class EmailController {
   async enviarEmailExpiracao(@Body() body: IBody) {
     const destinatarioEmail = body.destinatarioEmail;
     const destinatarioNome = body.destinatarioNome;
+    const nomeAluno = body.nomeAluno;
     const cursosSelecionados = body.cursosSelecionados;
     const escola = body.escola;
 
@@ -23,6 +25,7 @@ export class EmailController {
       await this.emailService.enviarEmailExpiracao(
         destinatarioEmail,
         destinatarioNome,
+        nomeAluno,
         cursosSelecionados,
         escola,
       );
@@ -40,6 +43,7 @@ export class EmailController {
   async enviarEmailConfirmacao(@Body() body: IBody) {
     const destinatarioEmail = body.destinatarioEmail;
     const destinatarioNome = body.destinatarioNome;
+    const nomeAluno = body.nomeAluno;
     const cursosSelecionados = body.cursosSelecionados;
     const escola = body.escola;
 
@@ -47,6 +51,7 @@ export class EmailController {
       await this.emailService.enviarEmailConfirmacao(
         destinatarioEmail,
         destinatarioNome,
+        nomeAluno,
         cursosSelecionados,
         escola,
       );
@@ -61,15 +66,43 @@ export class EmailController {
   }
 
   @Get('inscricao-liberada')
-  async enviarEmaiAvancoFila(@Body() body: IBody) {
+  async enviarEmailAvancoFila(@Body() body: IBody) {
     const destinatarioEmail = body.destinatarioEmail;
     const destinatarioNome = body.destinatarioNome;
+    const nomeAluno = body.nomeAluno;
     const cursosSelecionados = body.cursosSelecionados;
     const escola = body.escola;
     try {
       await this.emailService.enviarEmailAvancoFila(
         destinatarioEmail,
         destinatarioNome,
+        nomeAluno,
+        cursosSelecionados,
+        escola,
+      );
+
+      return { sendStatus: true, message: 'Email enviado com sucesso' };
+    } catch (err) {
+      return {
+        sendStatus: false,
+        error: `O seguinte erro ocorreu ao tentar enviar o email: ${err}`,
+      };
+    }
+  }
+
+  @Get('lista-espera')
+  async enviarEmailListaDeEspera(@Body() body: IBody) {
+    const destinatarioEmail = body.destinatarioEmail;
+    const destinatarioNome = body.destinatarioNome;
+    const nomeAluno = body.nomeAluno;
+    const cursosSelecionados = body.cursosSelecionados;
+    const escola = body.escola;
+
+    try {
+      await this.emailService.enviarEmailListaDeEspera(
+        destinatarioEmail,
+        destinatarioNome,
+        nomeAluno,
         cursosSelecionados,
         escola,
       );

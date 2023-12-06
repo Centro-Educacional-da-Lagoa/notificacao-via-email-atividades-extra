@@ -1,4 +1,8 @@
-export function expirarLiceu(nome: string, cursos: string[]): string {
+export function expirarLiceu(
+  nomeResponsavel: string,
+  nomeAluno: string,
+  cursos: string[],
+): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
@@ -71,17 +75,22 @@ export function expirarLiceu(nome: string, cursos: string[]): string {
                           padding: 0px 32px;
                         "
                       >
-                        Olá, ${nome}
+                        Olá, ${nomeResponsavel}
                       </h1>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <p style="color: #565656; padding: 0px 32px;">
-                        Infelizmente o tempo limite para a realização da matricula do(s) curso(s)
-                        <span style="font-weight: 700;"> ${cursos.join(
-                          ', ',
-                        )} </span> expirou.
+                        Infelizmente expirou o tempo limite para a realização da matricula do(a) aluno(a):<span style="font-weight: 800;"> ${nomeAluno}</span> no(s) curso(s):
+                        <span style="font-weight: 700;"> ${
+                          cursos.length > 1
+                            ? cursos.slice(0, -1).join(', ') +
+                              ' e ' +
+                              cursos.slice(-1)
+                            : cursos[0]
+                        }</span>.
+                        <br />
                         Retorne ao portal e efetue uma nova inscrição.
                       </p>
                     </td>

@@ -1,4 +1,8 @@
-export function avancarLiceu(nome: string, cursos: string[]): string {
+export function avancarLiceu(
+  nomeResponsavel: string,
+  nomeAluno: string,
+  cursos: string[],
+): string {
   return `
             <!DOCTYPE html>
             <html lang="pt">
@@ -65,19 +69,22 @@ export function avancarLiceu(nome: string, cursos: string[]): string {
                           padding: 0px 32px;
                         "
                       >
-                        Olá, ${nome}
+                        Olá, ${nomeResponsavel}
                       </h1>
                     </td>
                   </tr>
                   <tr>
                   <td>
                   <p style="color: #565656; padding: 0px 32px;">
-                    Boa notícia!<br /> Já é possível se inscrever no(s) curso(s)
-                    <span style="font-weight: 700;">${cursos.join(
-                      ', ',
-                    )}</span>. Entre no
-                    portal e efetue a inscrição.
-                  </p>
+                      Boa notícia!<br /> A inscrição do(a) aluno(a) <span style="font-weight: 800;">${nomeAluno}</span> no(s) curso(s):
+                      <span style="font-weight: 700;">${
+                        cursos.length > 1
+                          ? cursos.slice(0, -1).join(', ') +
+                            ' e ' +
+                            cursos.slice(-1)
+                          : cursos[0]
+                      }</span>, acaba de ser liberada! <br/>Entre no portal e efetue a inscrição.
+               </p>
                 </td>
                   </tr>
                   <tr>
@@ -190,7 +197,9 @@ export function avancarLiceu(nome: string, cursos: string[]): string {
                               <a
                                 href="https://www.youtube.com/channel/UCquX2i8JG0dK3pFgSz5pF1w"
                                 target="_blank"
-                                ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/YoutubeLogo.png" alt="Logo do Youtube" height="22px" />
+                                ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/YoutubeLogo.png" 
+                                  alt="Logo do Youtube" 
+                                  height="22px" />
                               </a>
                             </td>
                           </tr>
