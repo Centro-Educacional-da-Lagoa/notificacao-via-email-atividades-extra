@@ -193,11 +193,11 @@ export function expirarLiceu(nome: string, cursos: string[]): string {
                           </a>
                         </td>
                         <td class="espacamento-icones">
-                          <a
-                            href="https://www.youtube.com/channel/UCquX2i8JG0dK3pFgSz5pF1w"
-                            target="_blank"
-                            ><img src="./social/YoutubeLogo.png" alt="" height="22px" />
-                          </a>
+                        <a
+                        href="https://www.youtube.com/channel/UCquX2i8JG0dK3pFgSz5pF1w"
+                        target="_blank"
+                        ><img src="https://sjc1.vultrobjects.com/sinergia-cdn/social/YoutubeLogo.png" alt="Logo do Youtube" height="22px" />
+                      </a>
                         </td>
                       </tr>
                         </table>
