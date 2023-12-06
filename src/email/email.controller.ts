@@ -27,9 +27,12 @@ export class EmailController {
         escola,
       );
 
-      return 'email enviado com sucesso';
+      return { sendStatus: true, message: 'Email enviado com sucesso' };
     } catch (err) {
-      return `O seguinte erro ocorreu ao tentar enviar o email: ${err}`;
+      return {
+        sendStatus: false,
+        error: `O seguinte erro ocorreu ao tentar enviar o email: ${err}`,
+      };
     }
   }
 
@@ -48,9 +51,12 @@ export class EmailController {
         escola,
       );
 
-      return 'email enviado com sucesso';
+      return { sendStatus: true, message: 'Email enviado com sucesso' };
     } catch (err) {
-      return `O seguinte erro ocorreu ao tentar enviar o email: ${err}`;
+      return {
+        sendStatus: false,
+        error: `O seguinte erro ocorreu ao tentar enviar o email: ${err}`,
+      };
     }
   }
 
@@ -68,9 +74,12 @@ export class EmailController {
         escola,
       );
 
-      return 'email enviado com sucesso';
+      return { sendStatus: true, message: 'Email enviado com sucesso' };
     } catch (err) {
-      return `O seguinte erro ocorreu ao tentar enviar o email: ${err}`;
+      return {
+        sendStatus: false,
+        error: `O seguinte erro ocorreu ao tentar enviar o email: ${err}`,
+      };
     }
   }
 }
