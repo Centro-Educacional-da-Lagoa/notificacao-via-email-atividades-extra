@@ -32,7 +32,8 @@ Acesse a pasta insomnia-export(raiz do projeto) para importar as rotas e os payl
 
 #### Formato do Body de requisição(chave escola: "cel" ou "liceu"
 
-![Captura de tela 2023-11-28 161744](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/4304ef50-68e0-48ff-bb5c-2cfe43d45a5c)
+![image](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/9fdc9363-a151-49b4-b809-de60b4877409)
+
 
 #### Formato de retorno do JSON
 
@@ -55,6 +56,10 @@ localhost:3000/notificacao
 ### Confirmação de inscrição(resumo dos cursos aos quais o usuário se inscreveu):
 
 - localhost:3000/notificacao/confirmacao-inscricao
+
+### Entrada na lista de espera:
+
+- localhost:3000/notificacao/lista-espera
 
 
 ## Imagens de exemplo
