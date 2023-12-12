@@ -15,6 +15,7 @@ export class EmailController {
 
   @Get('tempo-expirado')
   async enviarEmailExpiracao(@Body() body: IBody) {
+console.log(body)
     const destinatarioEmail = body.destinatarioEmail;
     const destinatarioNome = body.destinatarioNome;
     const nomeAluno = body.nomeAluno;
