@@ -137,12 +137,5 @@ export function avancarLiceu(
       </div>
       <div class="barra-footer"></div>
     </div>
-  `
+  `;
 }
-
-
-
-
-
-
-

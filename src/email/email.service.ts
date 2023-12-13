@@ -73,7 +73,6 @@ export class EmailService {
     cursosSelecionados: string[],
     escola: string,
   ) {
-   
     const mailOptionsCel = {
       from: process.env.EMAIL_USER,
       to: destinatarioEmail,
@@ -98,7 +97,6 @@ export class EmailService {
     };
 
     if (escola == 'cel') {
-  
       return this.transporter.sendMail(mailOptionsCel);
     } else if (escola == 'liceu') {
       return this.transporter.sendMail(mailOptionsLiceu);
