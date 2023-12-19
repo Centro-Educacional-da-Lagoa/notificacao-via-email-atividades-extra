@@ -1,6 +1,10 @@
 ## Descrição
 
-Modulo de envio de email que que terá suas rotas operadas por outros modulos internos
+Modulo de envio de email que tem como objetivo testar os templates de corpo de email(html) que serão utilizados no módulo de envio de notificações do portal de [atividades extras](https://github.com/Centro-Educacional-da-Lagoa/atividades-extras-backend).
+
+## Path dos templates
+
+![image](https://github.com/Centro-Educacional-da-Lagoa/notificacao-via-email-atividades-extra/assets/19416864/00973408-5272-4f4b-a07b-4d6bcfe73a73)
 
 ## Instalando as dependências
 
