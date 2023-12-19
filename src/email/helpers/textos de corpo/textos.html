@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- -------------------- Avanço fila de espera ------------------------- -->
+    <p style="color: #565656; padding: 0px 32px;">
+        Boa notícia!<br /> A inscrição do(a) aluno(a) <span style="font-weight: 800;">${nomeAluno}</span>
+        no(s) curso(s):
+        <span style="font-weight: 700;">${
+            cursos.length > 1
+            ? cursos.slice(0, -1).join(', ') +
+            ' e ' +
+            cursos.slice(-1)
+            : cursos[0]
+            }</span>, acaba de ser liberada! <br />Entre no portal e efetue a inscrição.
+    </p>
+
+
+    <!-- -------------------- Confirmação de inscrição ------------------------- -->
+    <p style="color: #565656; padding: 0px 32px;">
+        Informamos que a inscrição do aluno <span style="font-weight: 800;">${nomeAluno}</span> no(s)
+        curso(s)
+        <span style="font-weight: 700;">${
+            cursos.length > 1
+            ? cursos.slice(0, -1).join(', ') +
+            ' e ' +
+            cursos.slice(-1)
+            : cursos[0]
+            }</span>, foi efetuada com sucesso!
+    </p>
+
+
+    <!-- -------------------- Expiração do tempo para inscrição ------------------------- -->
+    <p style="color: #565656; padding: 0px 32px;">
+        Infelizmente expirou o tempo limite para a realização da matricula do(a) aluno(a):<span
+            style="font-weight: 800;"> ${nomeAluno}</span> no(s) curso(s):
+        <span style="font-weight: 700;"> ${
+            cursos.length > 1
+            ? cursos.slice(0, -1).join(', ') + ' e ' + cursos.slice(-1)
+            : cursos[0]
+            }</span>.
+        <br />
+        Retorne ao portal e efetue uma nova inscrição.
+    </p>
+
+    <!-- -------------------- Extrada na fila de espera ------------------------- -->
+    <p style="color: #565656; padding: 0px 32px;">
+        Passando para lhe informar, que o(a) aluno(a) <span style="font-weight: 800;"> ${nomeAluno}</span>, acaba de
+        entrar na fila de espera para o(s) curso(s)
+        <span style="font-weight: 700;"> ${
+            cursos.length > 1
+            ? cursos.slice(0, -1).join(', ') +
+            ' e ' +
+            cursos.slice(-1)
+            : cursos[0]
+            } </span>.
+        Assim que houver alguma mudança no status, você receberá uma notificação.
+    </p>
+
+    <!-- -------------------- Priorizações ---------------------------------- -->
+    <td>
+        <p style="color: #565656; padding: 0px 32px;">
+            Informamos que as intenções de participação nas atividades do Centro Cultural já foram analisadas e
+            o seu(sua) filho(a) está apto a ser matriculado(a) no curso escolhido! O prazo para conclusão deste
+            processo é de 48h a partir do recebimento desta mensagem. Como a procura por algumas atividades foi
+            superior a quantidade de vagas disponíveis, após este período, caso a matrícula não seja realizada,
+            concederemos a vaga para o próximo(a) da fila de espera, caso haja.
+        </p>
+        <p style="color: #565656; padding: 0px 32px;">
+            Para realização da matrícula, basta clicar no link abaixo, fazer o login utilizando o Login e Senha
+            do Responsável Financeiro, confirmar as informações e concluir a matrícula.
+        </p>
+        <p style="color: #565656; padding: 0px 32px;">
+            Caso tenha alguma dúvida, entre em contato com a Secretaria Escolar.
+        </p>
+        <p style="padding: 0px 32px;">
+            ${tabelaCursos}
+        </p>
+    </td>
+
+</body>
+
+</html>
